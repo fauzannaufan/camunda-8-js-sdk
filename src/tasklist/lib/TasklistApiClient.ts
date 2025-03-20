@@ -294,7 +294,7 @@ export class TasklistApiClient {
 		const headers = await this.getHeaders()
 		const rest = await this.rest
 		return rest
-			.patch(`tasks/${taskId}/complete`, {
+			.post(`user-tasks/${taskId}/completion`, {
 				headers,
 				body: losslessStringify({
 					variables: encodeTaskVariablesForAPIRequest(variables || {}),
